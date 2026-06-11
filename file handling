@@ -1,0 +1,33 @@
+# File Handling Example
+
+filename = "sample.txt"
+
+# Writing to a file
+with open(filename, "w") as file:
+    file.write("Hello, Python!\n")
+    file.write("Welcome to File Handling.\n")
+
+print("Data written successfully.")
+
+# Reading the file
+print("\nFile Content:")
+with open(filename, "r") as file:
+    content = file.read()
+    print(content)
+
+# Appending data
+with open(filename, "a") as file:
+    file.write("This line is appended.\n")
+
+print("Data appended successfully.")
+
+# Reading line by line
+print("\nUpdated File Content:")
+with open(filename, "r") as file:
+    for line_no, line in enumerate(file, start=1):
+        print(f"Line {line_no}: {line.strip()}")
+
+# Counting lines
+with open(filename, "r") as file:
+    lines = file.readlines()
+    print(f"\nTotal Lines: {len(lines)}")
